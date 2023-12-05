@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alien 2</title>
+    <style>
+        body{
+            background-color: lightcoral;
+        }
+        #container{
+            background-color: white;
+            margin: 0px auto;
+            border: solid 1px black;
+            text-align: center;
+        }
+    </style>
+    <script>
+
+        
+        
+        function valt(id, szam){
+           let k = szam + 1;
+           if (szam == 4){
+               document.getElementById(id).src = "alien" + 1 + ".png";
+               document.getElementById(id).setAttribute("onclick", "valt('" + id  + "', " + 1 + ")");
+           }else{
+                document.getElementById(id).src = "alien" + (szam + 1) + ".png";
+                document.getElementById(id).setAttribute("onclick", "valt('" + id  + "', " + (szam + 1) + ")");
+           }
+        }
+
+    </script>
+</head>
+<body>
+    <div id="container">
+        <img id="kep1" onclick="valt('kep1', 1);" src="alien1.png">
+        <img id="kep2" onclick="valt('kep2', 2);" src="alien2.png">
+        <img id="kep3" onclick="valt('kep3', 3);" src="alien3.png">
+        <img id="kep4" onclick="valt('kep4', 4);" src="alien4.png">
+    </div>
+</body>
+</html>
